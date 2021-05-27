@@ -4,7 +4,7 @@ const HtmlWebpackPlugin=require('html-webpack-plugin');
 const MiniCssExtractPlugin=require('mini-css-extract-plugin');
 const {CleanWebpackPlugin}=require('clean-webpack-plugin');
 module.exports={
-  mode:'production',
+  mode:'development',
 
   stats:{
     children:true,
@@ -33,7 +33,7 @@ module.exports={
         use:[
           {
            loader:"html-loader",
-           options:{minimize:false},
+           options:{minimize:true},
           }
         ]
       },
