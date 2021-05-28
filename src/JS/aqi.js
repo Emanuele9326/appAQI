@@ -1,4 +1,4 @@
-import  "./app.css";
+import "../CSS/app.css";
 
 const latlng=[42.638426,12.674297];
 

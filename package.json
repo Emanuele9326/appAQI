@@ -1,5 +1,5 @@
 {
-  "name": "pr",
+  "name": "appAQI",
   "version": "1.0.0",
   "private": true,
   "main": "./src/JS/aqi.js",
@@ -25,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
+    "@types/node": "^15.6.1",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "*",
     "css-loader": "^5.2.6",

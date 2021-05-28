@@ -4,13 +4,12 @@ const HtmlWebpackPlugin=require('html-webpack-plugin');
 const MiniCssExtractPlugin=require('mini-css-extract-plugin');
 const {CleanWebpackPlugin}=require('clean-webpack-plugin');
 module.exports={
-  mode:'development',
 
   stats:{
     children:true,
   },
   entry:{
-    app:["@babel/polyfill",'./src/aqi.js'],
+    app:["@babel/polyfill",'./src/JS/aqi.js'],
   },
   devtool:'inline-source-map',
 
@@ -33,13 +32,17 @@ module.exports={
         use:[
           {
            loader:"html-loader",
-           options:{minimize:true},
+           options:{minimize:false},
           }
         ]
       },
       {
         test:/\.css$/i,
         use:[MiniCssExtractPlugin.loader,"css-loader"],
+      },
+      {
+        test:/\.(png|svg|jpg|jpeg|gif)$/i,
+        type:'asset/resource',
       }
 
     ]
@@ -53,8 +56,7 @@ module.exports={
     ),
     new MiniCssExtractPlugin(
       {
-        filename:"[name].css",
-        chunkFilename:"[id].css",
+        filename:"./CSS/[name].css",
       }
     ),
     new CleanWebpackPlugin(),
