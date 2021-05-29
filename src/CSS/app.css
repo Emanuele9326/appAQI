@@ -6,7 +6,7 @@
 body{
   display: block;
   text-align:center;
-  background-color: #e6e6e6;
+  background-color: #0dcaf047;
   margin:20px;
 }
 
@@ -70,6 +70,7 @@ ul{
 #AQI{
   width: 10%;
   text-align: center;
+  background-color: #ffffff;
 }
 #good{
   width: 15%;
