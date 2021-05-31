@@ -69,25 +69,25 @@ aqi.addEventListener("click",async function (){
     }
 
     //pm10
-    if(waqi_json.data.forecast.daily.pm10[0].avg===undefined){
+    if(waqi_json.data.iaqi.pm10 === undefined){
 
      document.getElementById('pm10').textContent="pm10 = --"
      //test console
-     console.log("value not detected");
+     console.log("pm10 value not detected");
 
     }else{
-      document.getElementById('pm10').textContent=`pm10 = ${waqi_json.data.forecast.daily.pm10[0].avg} µg/m^3`;
+      document.getElementById('pm10').textContent=`pm10 = ${waqi_json.data.iaqi.pm10.v} µg/m^3`;
     }
 
     //pm25
-    if(waqi_json.data.forecast.daily.pm25[0].avg===undefined){
+    if(waqi_json.data.iaqi.pm25 === undefined){
 
      document.getElementById('pm25').textContent="pm25 = --"
      //test console
-     console.log("value not detected");
+     console.log("pm25 value not detected");
 
     }else{
-     document.getElementById('pm25').textContent=`pm25 = ${waqi_json.data.forecast.daily.pm25[0].avg} µg/m^3`;
+     document.getElementById('pm25').textContent=`pm25 = ${waqi_json.data.iaqi.pm25.v} µg/m^3`;
     }
   }
 
@@ -135,27 +135,27 @@ geoloco.addEventListener("click",async function(){
     };
 
    //pm10
-   if(loc_json.data.forecast.daily.pm10[0].avg===undefined){
+   if(loc_json.data.iaqi.pm10===undefined){
 
      document.getElementById('pm10').textContent="pm10 = --"
 
      //test console
-     console.log("value not detected");
+     console.log("pm10 value not detected");
 
     }else{
-     document.getElementById('pm10').textContent=`pm10 = ${loc_json.data.forecast.daily.pm10[0].avg} µg/m^3`;
+     document.getElementById('pm10').textContent=`pm10 = ${loc_json.data.iaqi.pm10.v} µg/m^3`;
     }
 
     //pm25
 
-    if(loc_json.data.forecast.daily.pm25[0].avg===undefined){
+    if(loc_json.data.iaqi.pm25 === undefined){
 
      document.getElementById('pm25').textContent="pm25 = --"
 
      //test console
-     console.log("value not detected");
+     console.log("pm25 value not detected");
     }else{
-     document.getElementById('pm25').textContent=`pm25 = ${loc_json.data.forecast.daily.pm25[0].avg} µg/m^3`;
+     document.getElementById('pm25').textContent=`pm25 = ${loc_json.data.iaqi.pm25.v} µg/m^3`;
     }
 
   }
