@@ -24,6 +24,7 @@ let marker=L.marker(latlng).addTo(mymap);
 //returns the element that has the ID ("cityAQI") attribute with the specifed value
 let aqi=document.getElementById('cityAQI');
 
+//detects "AQI" of a city
 aqi.addEventListener("click",async function (){
 
  let str=document.getElementById('city').value;
@@ -36,20 +37,22 @@ aqi.addEventListener("click",async function (){
    let city=document.getElementById('city').value;
 
    const urlaqi= `aqi/${city}`;
-   const latlon=await fetch(urlaqi);
-   const json_latlon= await latlon.json();
+   const latlon=await fetch(urlaqi)
+   .then(response =>response.json())
+   .catch(err => console.error(err));
 
 
-   let lat = json_latlon.results[0].locations[0].displayLatLng.lat;
+
+   let lat = latlon.results[0].locations[0].displayLatLng.lat;
    console.log(lat);
-   let long=json_latlon.results[0].locations[0].displayLatLng.lng;
+   let long=latlon.results[0].locations[0].displayLatLng.lng;
    console.log(long);
 
 
    let waqi_url =`geo/${lat},${long}`
-   const waqi_city=await fetch(waqi_url);
-   const waqi_json=await waqi_city.json();
-
+   const waqi_city=await fetch(waqi_url)
+   .then(response=>response.json())
+   .catch(err => console.error(err));
 
    mymap.setView(new L.LatLng(lat,long),12);
 
@@ -58,36 +61,36 @@ aqi.addEventListener("click",async function (){
    marker.setLatLng(newLatLng);
 
    //AQI
-   if(waqi_json.data.aqi===undefined){
+   if(waqi_city.data.aqi===undefined){
 
      document.getElementById('aqi').textContent="AQI = --"
      //test console
      console.log("survey station not present or value not detected");
 
     }else{
-     document.getElementById('aqi').textContent=`AQI = ${waqi_json.data.aqi}`;
+     document.getElementById('aqi').textContent=`AQI = ${waqi_city.data.aqi}`;
     }
 
     //pm10
-    if(waqi_json.data.iaqi.pm10 === undefined){
+    if(waqi_city.data.iaqi.pm10 === undefined){
 
      document.getElementById('pm10').textContent="pm10 = --"
      //test console
      console.log("pm10 value not detected");
 
     }else{
-      document.getElementById('pm10').textContent=`pm10 = ${waqi_json.data.iaqi.pm10.v} µg/m^3`;
+      document.getElementById('pm10').textContent=`pm10 = ${waqi_city.data.iaqi.pm10.v} µg/m^3`;
     }
 
     //pm25
-    if(waqi_json.data.iaqi.pm25 === undefined){
+    if(waqi_city.data.iaqi.pm25 === undefined){
 
      document.getElementById('pm25').textContent="pm25 = --"
      //test console
      console.log("pm25 value not detected");
 
     }else{
-     document.getElementById('pm25').textContent=`pm25 = ${waqi_json.data.iaqi.pm25.v} µg/m^3`;
+     document.getElementById('pm25').textContent=`pm25 = ${waqi_city.data.iaqi.pm25.v} µg/m^3`;
     }
   }
 
@@ -113,8 +116,10 @@ geoloco.addEventListener("click",async function(){
 
    //url_path -- index.js-->framework Express
    let url_geo=`geo/${lat},${long}`;
-   let loc_response=  await fetch(url_geo);
-   let loc_json=await loc_response.json();
+   let loc_response=  await fetch(url_geo)
+   .then(response=>response.json())
+   .catch(err => console.error(err));
+
    mymap.setView(new L.LatLng(lat,long),16);
    //represents a geographic point
    let newLatLng=new L.LatLng(lat,long)
@@ -123,7 +128,7 @@ geoloco.addEventListener("click",async function(){
 
 
    //AQI
-   if(loc_json.data.aqi===undefined){
+   if(loc_response.data.aqi===undefined){
 
      document.getElementById('aqi').textContent="AQI = --"
 
@@ -131,11 +136,11 @@ geoloco.addEventListener("click",async function(){
      console.log("survey station not present or value not detected");
 
     }else{
-      document.getElementById('aqi').textContent=`AQI = ${loc_json.data.aqi}`;
+      document.getElementById('aqi').textContent=`AQI = ${loc_response.data.aqi}`;
     };
 
    //pm10
-   if(loc_json.data.iaqi.pm10===undefined){
+   if(loc_response.data.iaqi.pm10===undefined){
 
      document.getElementById('pm10').textContent="pm10 = --"
 
@@ -143,19 +148,19 @@ geoloco.addEventListener("click",async function(){
      console.log("pm10 value not detected");
 
     }else{
-     document.getElementById('pm10').textContent=`pm10 = ${loc_json.data.iaqi.pm10.v} µg/m^3`;
+     document.getElementById('pm10').textContent=`pm10 = ${loc_response.data.iaqi.pm10.v} µg/m^3`;
     }
 
     //pm25
 
-    if(loc_json.data.iaqi.pm25 === undefined){
+    if(loc_response.data.iaqi.pm25 === undefined){
 
      document.getElementById('pm25').textContent="pm25 = --"
 
      //test console
      console.log("pm25 value not detected");
     }else{
-     document.getElementById('pm25').textContent=`pm25 = ${loc_json.data.iaqi.pm25.v} µg/m^3`;
+     document.getElementById('pm25').textContent=`pm25 = ${loc_response.data.iaqi.pm25.v} µg/m^3`;
     }
 
   }
