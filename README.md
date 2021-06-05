@@ -59,7 +59,7 @@
     <li>file: <b>.gitignore</b></li>
     <li><b>LICENSE</b></li>
     <li><b>README.md</b></li>
-    <li> Server: <b>index.js</b></li>
+    <li> Server: <b>server.js</b></li>
     <li><b>package-lock.json</b></li>
     <li><b>package.json</b></li>
     <li><b>webpack.config.js</b></li>
