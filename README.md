@@ -25,6 +25,8 @@
  L'app puo essere testata al link riportato di seguito da un qualsiasi dispositivo come pc o mobile.
 #### Link
  Per testare l'app andare al seguente link: https://app-aqi.glitch.me
+ 
+ Web application deployment : Glitch ( https://glitch.com )
 
 #### Costruito con:
  <b>Framework</b> utilizzati sono:
@@ -37,7 +39,7 @@
  <b>Module bundler</b>
   * [Webpack] (https://webpack.js.org/)
     
- <b> API utilizzate </b>
+ <b>API utilizzate</b>
    * [API JavaScript "Geolocation] 
    * [API esterna  AQICN] (https://aqicn.org)
    * [API esterna MAPQUEST] (https://developer.mapquest.com)
