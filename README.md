@@ -4,7 +4,7 @@
   <summary>Sommario</summary>
   <ol>
     <li>
-      <a href="#informazioni-sul-progeto">Informazioni sul progetto</a>
+      <a href="#informazioni-sul-progetto">Informazioni sul progetto</a>
       <ul>
        <li><a href="#link">Link</a></li>
         <li><a href="#costruito-con">Costruito con</a></li>
