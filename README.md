@@ -36,7 +36,11 @@
 
  <b>Module bundler</b>
   * [Webpack] (https://webpack.js.org/)
-
+    
+ <b> API utilizzate </b>
+   * [API JavaScript "Geolocation] 
+   * [API esterna  AQICN] (https://aqicn.org)
+   * [API esterna MAPQUEST] (https://developer.mapquest.com)
 
 
 <!--Descrizione-->
