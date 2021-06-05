@@ -24,7 +24,7 @@
 ## Informazioni sul progetto
  L'app puo essere testata al link riportato di seguito da un qualsiasi dispositivo come pc o mobile.
 #### Link
- Per testare l'app andare al seguente link: ...
+ Per testare l'app andare al seguente link: https://app-aqi.glitch.me
 
 #### Costruito con:
  <b>Framework</b> utilizzati sono:
