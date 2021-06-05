@@ -82,4 +82,4 @@ nel browser a partire da un insieme di file sorgenti strutturati su diversi file
      - di rilevare il livello di inquinamento di una determinata città/regione andando semplicemente ad inserire il nome nel input e premendo il pulsante AQI;
      - oppure rilevare l'inquinamento del luogo in cui si trova utilizzando il pulsante "Geolocation" .
  ## Licenza
-    Distribuito con licenza MIT. Vedere "LICENZA" per ulteriori informazioni.
+    Distribuito con licenza MIT. Vedere "LICENSE" per ulteriori informazioni.
