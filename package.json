@@ -10,6 +10,7 @@
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
   "author": "",
   "license": "MIT",
   "description": "",
@@ -21,6 +22,7 @@
     "leaflet": "^1.7.1",
     "node-fetch": "^2.6.1"
   },
+
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",

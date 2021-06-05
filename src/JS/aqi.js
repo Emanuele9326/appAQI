@@ -32,7 +32,7 @@ aqi.addEventListener("click",async function (){
  // "if-else" checks if "str=document.getElementById('city').value" is an empty string
  if(str.length===0){
    console.log("city ​​not entered");
-   alert("Enter city eg: Livorno, IT --- or use the Geolocation button");
+   alert("Enter city eg: Livorno --- or use the Geolocation button");
   }else{
    let city=document.getElementById('city').value;
 
@@ -49,7 +49,7 @@ aqi.addEventListener("click",async function (){
    console.log(long);
 
 
-   let waqi_url =`geo/${lat},${long}`
+   let waqi_url =`geo/${lat},${long}`;
    const waqi_city=await fetch(waqi_url)
    .then(response=>response.json())
    .catch(err => console.error(err));
@@ -57,13 +57,13 @@ aqi.addEventListener("click",async function (){
    mymap.setView(new L.LatLng(lat,long),12);
 
    //move marker
-   let newLatLng=new L.LatLng(lat,long)
+   let newLatLng=new L.LatLng(lat,long);
    marker.setLatLng(newLatLng);
 
    //AQI
    if(waqi_city.data.aqi===undefined){
 
-     document.getElementById('aqi').textContent="AQI = --"
+     document.getElementById('aqi').textContent="AQI = --";
      //test console
      console.log("survey station not present or value not detected");
 
@@ -74,7 +74,7 @@ aqi.addEventListener("click",async function (){
     //pm10
     if(waqi_city.data.iaqi.pm10 === undefined){
 
-     document.getElementById('pm10').textContent="pm10 = --"
+     document.getElementById('pm10').textContent="pm10 = --";
      //test console
      console.log("pm10 value not detected");
 
@@ -85,7 +85,7 @@ aqi.addEventListener("click",async function (){
     //pm25
     if(waqi_city.data.iaqi.pm25 === undefined){
 
-     document.getElementById('pm25').textContent="pm25 = --"
+     document.getElementById('pm25').textContent="pm25 = --";
      //test console
      console.log("pm25 value not detected");
 
@@ -130,7 +130,7 @@ geoloco.addEventListener("click",async function(){
    //AQI
    if(loc_response.data.aqi===undefined){
 
-     document.getElementById('aqi').textContent="AQI = --"
+     document.getElementById('aqi').textContent="AQI = --";
 
      //test console
      console.log("survey station not present or value not detected");
@@ -142,7 +142,7 @@ geoloco.addEventListener("click",async function(){
    //pm10
    if(loc_response.data.iaqi.pm10===undefined){
 
-     document.getElementById('pm10').textContent="pm10 = --"
+     document.getElementById('pm10').textContent="pm10 = --";
 
      //test console
      console.log("pm10 value not detected");
@@ -155,7 +155,7 @@ geoloco.addEventListener("click",async function(){
 
     if(loc_response.data.iaqi.pm25 === undefined){
 
-     document.getElementById('pm25').textContent="pm25 = --"
+     document.getElementById('pm25').textContent="pm25 = --";
 
      //test console
      console.log("pm25 value not detected");

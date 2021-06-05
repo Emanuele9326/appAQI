@@ -27,6 +27,7 @@ module.exports={
           loader:"babel-loader"
         }
       },
+
       {
         test:/\.html$/i,
         use:[
@@ -36,17 +37,20 @@ module.exports={
           }
         ]
       },
+
       {
         test:/\.css$/i,
         use:[MiniCssExtractPlugin.loader,"css-loader"],
       },
+
       {
         test:/\.(png|svg|jpg|jpeg|gif)$/i,
         type:'asset/resource',
-      }
+      },
 
     ]
   },
+
   plugins:[
     new HtmlWebpackPlugin(
         {
@@ -54,11 +58,13 @@ module.exports={
           filename:"./index.html"
         }
     ),
+
     new MiniCssExtractPlugin(
       {
         filename:"./CSS/[name].css",
       }
     ),
+
     new CleanWebpackPlugin(),
   ],
 };
